@@ -1,0 +1,639 @@
+@font-face {
+    font-family: money;
+    src: url('font/Superfats-K4Vp.ttf');
+}
+/* CSS หน้าต่างเมนู */
+body{
+    margin: 0;
+    overflow: hidden;
+}
+.window_main_menu, .window_main_pig, .window_main_shop{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    transition: .5s;
+}
+.window_main_menu{
+    background-image: url("picture/bg_main.PNG");
+    background-size: 100% 100%;
+    z-index: 1;
+}
+.window_button_menu{
+    height: 35vh;
+    width: 28vw;
+    opacity: 1;
+    position: absolute;
+    top: 37%;
+    left: 7.5%;
+}
+.button_start, .button_tutorial, .button_story{
+    position: relative;
+    height: 22%;
+    width: 73%;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 3.5%;
+    cursor: pointer;
+    background-size: 100% 100%;
+}
+.button_start{
+    background-image: url("picture/button_start.png");
+}
+.button_start:hover{
+    background-image: url("picture/button_start_hover.png");
+}
+.button_tutorial{
+    background-image: url("picture/button_tutorial.png");
+}
+.button_tutorial:hover{
+    background-image: url("picture/button_tutorial_hover.png");
+}
+.button_story{
+    background-image: url("picture/button_story.png");
+}
+.button_story:hover{
+    background-image: url("picture/button_story_hover.png");
+}
+.pop_up_tutorial{
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    transition: 1s;
+    z-index: 3;
+}
+.pop_up_win{
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    background-image: url("picture/win.PNG");
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    transition: 1s;
+    z-index: 3;
+}
+.blur{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+    z-index: 0;
+    opacity: 0.8;
+
+}
+.box_option_pop_up{
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+    justify-content: space-between;
+}
+.icon_menu_2{
+    cursor: pointer;
+    height: 100%;
+    width: 20%;
+    position: relative;
+    background-image: url("picture/icon_back.png");
+    background-size: 100% 100%;
+    background-position: top center;
+}
+.icon_play_again{
+    cursor: pointer;
+    height: 100%;
+    width: 20%;
+    position: relative;
+    background-image: url("picture/icon_play_again.png");
+    background-size: 100% 100%;
+    background-position: top center;
+}
+.box_page_2{
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    width: 550px;
+    background-image: url("picture/icon_page.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.pop_up_lose{
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    background-image: url("picture/lose.PNG");
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    transition: 1s;
+    z-index: 3;
+}
+.exist_pop_up_tutorial{
+    position: absolute;
+    height: 8%;
+    width: 5%;
+    background-image: url("picture/icon_exist.png");
+    background-size: 100% 100%;
+    top: 2%;
+    right: 1%;
+    cursor: pointer;
+    z-index: 5;
+}
+.pop_up_story{
+    height: 80vh;
+    width: 60vw;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+    transition: 1s;
+    background-image: url("picture/story.png");
+    background-size: 100% 100%;
+    z-index: 3;
+}
+.exist_pop_up_story{
+    position: absolute;
+    height: 8%;
+    width: 5%;
+    background-image: url("picture/icon_exist.png");
+    background-size: 100% 100%;
+    top: 2%;
+    right: 1%;
+    cursor: pointer;
+}
+/* CSS หน้าต่างเมนู */
+
+/* CSS หน้า Interface */
+.interface{
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background-image: url('picture/interface.PNG');
+    background-size: cover;
+    bottom: 0;
+}
+.swap_box{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    bottom: 0;
+}
+.icon_pig, .icon_shop{
+    position: absolute;
+    height: 33%;
+    width: 25%;
+    border-radius: 100%;
+    cursor: pointer;
+    z-index: 0;
+    transition: .5s;
+    background-size: cover;
+}
+.icon_pig{
+    top: -5%;
+    left: 15%;
+    background-image: url('picture/icon_pig.png');
+}
+.icon_shop{
+    top: 30%;
+    left: 45%;
+    background-image: url('picture/icon_shop.png');
+}
+.icon_menu{
+    cursor: pointer;
+    height: 40%;
+    width: 30%;
+    position: absolute;
+    background-image: url("picture/icon_back.png");
+    background-size: 100% 100%;
+    border: 1px solid black;
+    border-radius: 100%;
+    top: 35%;
+    left: 10%;
+    z-index: 0;
+    transition: .5s;
+}
+.icon_hungry{
+    height: 40%;
+    width: 6%;
+    position: absolute;
+    background-image: url("picture/icon_hungry.png");
+    background-size: 100% 100%;
+    border-radius: 100%;
+    top: 60%;
+    left: 20%;
+    z-index: 0;
+    opacity: 0;
+    transition: .5s;
+    display: none;
+}
+.money{
+    width: 70%;
+    height: 13%;
+    position: absolute;
+    bottom: 10%;
+    z-index: 0;
+    text-align: center;
+    left: 7%;
+    display: flex;
+    background-image: url("picture/money.png");
+    background-size: 100% 100%;
+}
+.icon_money{
+    width: 10%;
+    height: 100%;
+    position: relative;
+    left: 0;
+}
+.amount_money{
+    position: relative;
+    height: 100%;
+    width: 90%;
+    font-family: money;
+    text-align: center;
+}
+.amount_money span{
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+}
+.burger{
+    width: 70%;
+    height: 13%;
+    position: absolute;
+    bottom: -5%;
+    z-index: 0;
+    text-align: center;
+    left: 7%;
+    display: flex;
+    background-image: url("picture/bar_hamburger.png");
+    background-size: 100% 100%;
+}
+.icon_burger{
+    width: 10%;
+    height: 100%;
+    position: relative;
+    left: 0;
+}
+.amount_burger{
+    position: relative;
+    height: 100%;
+    width: 90%;
+    font-family: money;
+    text-align: center;
+}
+.amount_burger span{
+    font-size: 1rem;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+}
+.box_interface{
+    height: 30%;
+    width: 100%;
+    top: 68%;
+    position: absolute;
+}
+.box_option{
+    width: 6%;
+    height: 43%;
+    left: 60%;
+    z-index: 3;
+    top: 57%;
+    position: absolute;
+    z-index: 0;
+}
+.box_page{
+    text-decoration: none;
+    position: relative;
+    height: 45%;
+    width: 300px;
+    background-image: url("picture/icon_page.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.box_play_and_pause{
+    position: relative;
+    height: 48%;
+    width: 300px;
+    top: 4%;
+    display: flex;
+}
+.play{
+    width: 150px;
+    height: 100%;
+    background-image: url("picture/icon_play.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.pause{
+    width: 150px;
+    height: 100%;
+    background-image: url("picture/icon_pause.png");
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+/* CSS หน้า Interface */
+
+/* CSS หน้าต่างเล้าหมู */
+.window_main_pig_and_shop{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+.window_main_pig{
+    position: absolute;
+    background-image: url("picture/test.PNG");
+    background-size: 100% 100%;
+
+    opacity: 0;
+    z-index: 0;
+}
+.dirt{
+    height: 42.5%;
+    top: 57.5%;
+    width: 100%;
+    position: absolute;
+    background-image: url("picture/dirt.png");
+    background-size: 100% 100%;
+    filter: blur(3px);
+}
+.box_food_and_supply{
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    height: 39%;
+    width: 15%;
+    display: flex;
+}
+.box_food{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.box_supply{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.box_pig{
+    position: absolute;
+    height: 11%;
+    width: 60%;
+    top: 5%;
+    right: 3%;
+    display: flex;
+    justify-content: center;
+}
+.box_tua_pig{
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    top: 46%;
+    display: flex;
+}
+.tua_pig{
+    position: relative;
+    height: 100%;
+    width: 10%;
+    background-image: url('picture/pig1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(0.5);
+    transition: 1s;
+}
+.counter{
+    width: 100%;
+    height: 40%;
+    top: 60%;
+    background-image: url("picture/counter.png");
+    position: absolute;
+    background-size: 100% 100%;
+    filter: blur(3px);
+}
+.icon_eto{
+    border-radius: 100%;
+    width: 9%;
+    height: 100%;
+    position: relative;
+    background-image: url("picture/icon_eto.png");
+    background-size: 100% 100%;
+    border: 4px solid black;
+    opacity: .3;
+    transition: .5s;
+}
+.icon{
+    position: relative;
+    border-radius: 100%;
+    width: 70%;
+    height: 30%;
+    margin-bottom: 10%;
+    transition: .5s;
+    border: 3px solid #333;
+    background-color: hsl(0,0%,0%,.3);
+}
+.food{
+    opacity: 0.3;
+    background-size: 100% 100%;
+}
+
+#rum{
+    background-image: url("picture/icon_rum.png");
+}
+#cabbage{
+    background-image: url("picture/icon_cabbage.png");
+}
+#carrot{
+    background-image: url("picture/icon_carrot.png");
+}
+.supply{
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+#vitamin{
+    background-image: url("picture/icon_vitamin.png");
+}
+#vaccine{
+    background-image: url("picture/icon_vaccine.png");
+}
+.growth_pig{
+    position: relative;
+    height: 25%;
+    width: 80%;
+    background: white;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.father{
+    position: absolute;
+    height: 35%;
+    width: 17%;
+    background-image: url("picture/father_normal.png");
+    background-size: cover;
+    border-right: none;
+    border-bottom: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    z-index: 0;
+}
+.father img{
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+.fill_bar{
+    position:absolute;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: black;
+    transition: 1s;
+}
+/* CSS หน้าต่างเล้าหมู */
+
+/* CSS หน้าต่างร้านค้า */
+.window_main_shop{
+    position: absolute;
+    background-image: url("picture/bg_shop.PNG");
+    background-size: 100% 100%;
+    opacity: 0;
+    z-index: 0;
+}
+.box_tua_customer{
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    top: 0%;
+}
+.bar_tua_customer{
+    position: absolute;
+    top: 10%;
+    height: 5%;
+    width: 70%;
+    transform: translate(-50%);
+    left: 50%;
+    display: flex;
+    background-image: url("picture/bar_drug.png");
+    background-size: 100% 100%;
+}
+.fill_bar_tua_customer{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: black;
+    transition: 1s;
+}
+.tua_customer{
+    position: absolute;
+    background-image: url('picture/customer_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 25%;
+    left: -50%;
+}
+/* CSS หน้าต่างร้านค้า */
+.detail{
+    position: absolute;
+    width: auto;
+    height: auto;
+    background:rgb(29, 29, 29);
+    top: 6%;
+    left: 19%;
+    opacity: 0;
+    color: rgb(236, 236, 236);
+    padding: 1%;
+    box-shadow: 0 0 0 5px #5a585a;
+}
+.detail2{
+    position: absolute;
+    width: auto;
+    height: auto;
+    background:rgb(29, 29, 29);
+    top: 8%;
+    left: 60%;
+    opacity: 0;
+    color: rgb(236, 236, 236);
+    padding: 1%;
+    box-shadow: 0 0 0 5px #5a585a;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: hsla(0,0%,0%,0.5);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+    background-color: hsla(0,0%,0%,0.8);
+  }
+  
+  /* Caption text */
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: orange;
+    font-size: 36px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  .mySlides{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: black;
+  }
+  
+  /* Fading animation */
+  .fade {
+
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForMia</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- หน้าต่างเมนู -->
+    <div class="blur" id="window_blur"></div>
+    <div class="pop_up_tutorial">
+        <div class="exist_pop_up_tutorial button" onclick="exist_pop_up_tutorial()"></div>
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 8</div>
+            <img src="picture/page1.jpg" style="width:100%; height: 100%;">
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 8</div>
+            <img src="picture/page2-1.jpg" style="width:100%; height: 100%;">
+          </div>
+          
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 8</div>
+            <img src="picture/page2-2.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">4 / 8</div>
+            <img src="picture/page2-3.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">5 / 8</div>
+            <img src="picture/page3.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">6 / 8</div>
+            <img src="picture/page4.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">7 / 8</div>
+            <img src="picture/page5.jpg" style="width:100%; height: 100%;">
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">8 / 8</div>
+            <img src="picture/page6.jpg" style="width:100%; height: 100%;">
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="pop_up_story">
+        <div class="exist_pop_up_story button" onclick="exist_pop_up_story()"></div>
+    </div>
+    <div class="pop_up_lose" id="lose_pop">
+        <div class="box_option_pop_up">
+            <a href="https://poppo-food-greenpeace.netlify.app/">
+                <div class="box_page_2"></div>
+            </a>
+            <div class="icon_play_again button" onclick="set_value()" id="again"></div>
+        </div>
+    </div>
+    <div class="pop_up_win" id="win_pop">
+        <div class="box_option_pop_up">
+            <a href="https://poppo-food-greenpeace.netlify.app/">
+                <div class="box_page_2"></div>
+            </a>
+            <div class="icon_play_again button" onclick="set_value()" id="again"></div>
+        </div>
+    </div>
+    <div class="window_main_menu">
+        <div class="window_button_menu">
+            <div class="button_start button" onclick="change_to_pig(); click();"></div>
+            <div class="button_tutorial button" onclick="pop_up_tutorial()"></div>
+            <div class="button_story button" onclick="pop_up_story()"></div>
+        </div>
+    </div>
+    <!-- หน้าต่างหมูกับร้านค้า -->
+    <div class="window_main_pig_and_shop">
+        <!-- หน้าต่างหมู -->
+        <div class="window_main_pig" id="background">
+            <div class="detail" id="info"></div>
+            <div class="box_food_and_supply">
+                <div class="box_food">
+                    <div class="icon food" id="rum" fill="10"></div>
+                    <div class="icon food" id="carrot" fill="15"></div>
+                    <div class="icon food" id="cabbage" fill="20"></div>
+                </div>
+                <div class="box_supply">
+                    <div class="icon supply button" id="vitamin" hungry="8" onclick="use_supply(this)"></div>
+                    <div class="icon supply button" id="vaccine" hungry="4" onclick="use_supply(this)"></div>
+                    
+                </div>
+            </div>
+            <div class="box_pig">
+                <div class="icon_eto" id="eto"></div>
+                <div class="growth_pig">
+                    <div class="fill_bar"></div>
+                </div>
+            </div>
+            <div class="box_tua_pig">
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+                <div class="tua_pig"></div>
+            </div>
+            <div class="dirt"></div>
+            <div class="interface">
+            </div>
+        </div>
+        <!-- หน้าต่างร้านค้า -->
+        <div class="window_main_shop">
+            <div class="detail2" id="show_info"></div>
+            <div class="box_tua_customer">
+                <div class="tua_customer">
+                    <div class="bar_tua_customer" id="bar_showinfo">
+                        <div style="height: 100%; width:11%;"></div>
+                        <div style="height: 100%; width:89%;">
+                            <div class="fill_bar_tua_customer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="counter"></div>
+            <div class="interface">
+            </div>
+        </div>
+        <!-- กล่องใส่พวกปุ่มกดสลับหน้าจาตรง Interface -->
+        <div class="box_interface">
+            <div class="swap_box">
+                <div class="icon_menu button" onclick="change_to_menu()" id="menu"></div>
+                <div class="icon_pig button" onclick="change_to_pig()" id="pig"></div>
+                <div class="icon_shop button" onclick="change_to_shop()" id="shop"></div>
+                <div class="money">
+                    <div class="icon_money"></div>
+                    <div class="amount_money">
+                        <span id="money">100000</span>
+                    </div>
+                </div>
+                <div class="burger">
+                    <div class="icon_burger"></div>
+                    <div class="amount_burger">
+                        <span id="burger">1</span>
+                    </div>
+                </div>
+            </div>
+            <div class="box_option">
+                <a href="https://poppo-food-greenpeace.netlify.app/">
+                    <div class="box_page"></div>
+                </a>
+                <div class="box_play_and_pause">
+                    <div class="play button" onclick="play()"></div>
+                    <div class="pause button" onclick="pause()"></div>
+                </div>
+            </div>
+            <div class="icon_hungry" id="hungry"></div>
+        </div>
+        <div class="father" id="father">
+            <img src="picture/window_father.PNG">
+        </div>
+    </div>
+</body>
+<script>
+    var button = document.querySelectorAll(".button");
+    for(let i=0; i<button.length; i++){
+        button[i].addEventListener("click", click, false);
+    }
+    // โชวข้อมูลของอาหาร หน้าต่างเล้าหมู
+    rum.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>รำข้าว</span><br>-เพิ่มหลอดการเจริญเติบโต 10 หน่วย<br>-ราคา 1000";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    carrot.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>แครอท</span><br>-เพิ่มหลอดการเจริญเติบโต 15 หน่วย<br>-ราคา 2000";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    cabbage.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>กะหล่ำ</span><br>-เพิ่มหลอดการเจริญเติบโต 20 หน่วย<br>-ราคา 3000";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    vitamin.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>อาหารเสริม</span><br>-ทำให้หมูหิวทุกๆ 8 วินาที<br>-ราคา 15000<br>-เสียวิละ 300";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    vaccine.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>วัคซีนเร่งโต</span><br>-ทำให้หมูหิวทุกๆ 4 วินาที<br>-ราคา 20000<br>-เสียวิละ 500";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    eto.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>อีโต้</span><br>กดใช้ได้เมื่อหลอดการเจริญเติบโต<br>ของหมูเต็มแล้วเท่านั้น";
+        document.getElementById("info").style.opacity = "1";
+        }, false);
+    hungry.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "หมูกำลังหิวววววว!!!<br>ถ้าไม่รีบให้อาหารหมูจะตายภายใน 4 วินาที";
+        document.getElementById("info").style.opacity = "1";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "หมูกำลังหิวววววว!!!<br>ถ้าไม่รีบให้อาหารหมูจะตายภายใน 4 วินาที";
+        document.getElementById("show_info").style.opacity = "1";
+        }, false);
+    menu.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าเมนู</span>";
+        document.getElementById("info").style.opacity = "1";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าเมนู</span>";
+        document.getElementById("show_info").style.opacity = "1";
+        }, false);
+    pig.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าเล้าหมู</span>";
+        document.getElementById("info").style.opacity = "1";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าเล้าหมู</span>";
+        document.getElementById("show_info").style.opacity = "1";
+        }, false);
+    shop.addEventListener("mouseover", function(){
+        document.getElementById("info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าร้านค้า</span>";
+        document.getElementById("info").style.opacity = "1";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "<span style='font-size: 24px;'>ไปหน้าร้านค้า</span>";
+        document.getElementById("show_info").style.opacity = "1";
+        }, false);
+    // ลบข้อมูลของอาหาร หน้าต่างเล้าหมู
+    rum.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        }, false);
+    carrot.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        }, false);
+    cabbage.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        }, false);
+    vitamin.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+    document.getElementById("info").style.opacity = "0";
+        }, false);
+    vaccine.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        }, false);
+    eto.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        }, false);
+    hungry.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "";
+        document.getElementById("show_info").style.opacity = "0";
+        }, false);
+    menu.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "";
+        document.getElementById("show_info").style.opacity = "0";
+        }, false);
+    pig.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "";
+        document.getElementById("show_info").style.opacity = "0";
+        }, false);
+    shop.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "";
+        document.getElementById("show_info").style.opacity = "0";
+        }, false);
+    money.addEventListener("mouseleave", function(){
+        document.getElementById("info").innerHTML = "";
+        document.getElementById("info").style.opacity = "0";
+        //โชว์ในหน้า shop
+        document.getElementById("show_info").innerHTML = "";
+        document.getElementById("show_info").style.opacity = "0";
+        }, false);
+    // โชวข้อมูลของหลอดอารมณ์ หน้าต่างร้านค้า
+    bar_showinfo.addEventListener("mouseover", function(){
+        document.getElementById("show_info").style.opacity = "1";
+        document.getElementById("show_info").innerHTML = "หลอดแสดงการสะสมเชื้อดื้อยาของลูกค้า<br>-ถ้าเกิน 70% เราจะเสียลูกค้าไปตลอด";
+        }, false);
+    bar_showinfo.addEventListener("mouseleave", function(){
+        document.getElementById("show_info").style.opacity = "0";
+        document.getElementById("show_info").innerHTML = "";
+        }, false);
+        var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+
+}
+
+</script>
+</html>
